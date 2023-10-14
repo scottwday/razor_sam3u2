@@ -90,6 +90,8 @@
 #endif
 
 
+#define SCB_VTOR_TBLOFF_Pos                 7U                                            /*!< SCB VTOR: TBLOFF Position */
+#define SCB_VTOR_TBLOFF_Msk                (0x1FFFFFFUL << SCB_VTOR_TBLOFF_Pos)           /*!< SCB VTOR: TBLOFF Mask */
 
 
 /**
@@ -974,7 +976,11 @@ extern int32_t __REVSH(int16_t value);
  *
  * Reverse bit order of value
  */
-extern uint32_t __RBIT(uint32_t value);
+#ifdef __GNUC__
+  #define __RBIT __builtin_bswap32
+#else
+  extern uint32_t __RBIT(uint32_t value);
+#endif
 
 /**
  * @brief  LDR Exclusive

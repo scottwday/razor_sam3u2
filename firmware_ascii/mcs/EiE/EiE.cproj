@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATSAM3U2C</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>EiE</AssemblyName>
+    <Name>EiE</Name>
+    <RootNamespace>EiE</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.52.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.samice</avrtool>
+    <avrtoolserialnumber>480016441</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x280A0760</avrdeviceexpectedsignature>
+    <com_atmel_avrdbg_tool_samice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>4000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.samice</ToolType>
+      <ToolNumber>480016441</ToolNumber>
+      <ToolName>J-Link</ToolName>
+    </com_atmel_avrdbg_tool_samice>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <avrtoolinterfaceclock>4000000</avrtoolinterfaceclock>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>NDEBUG</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAM3U_DFP\1.0.49\include</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcc.linker.libraries.Libraries>
+  <armgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>%24(ProjectDir)\Device_Startup</Value>
+    </ListValues>
+  </armgcc.linker.libraries.LibrarySearchPaths>
+  <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.miscellaneous.LinkerFlags>-Tsam3u2c_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAM3U_DFP\1.0.49\include</Value>
+    </ListValues>
+  </armgcc.assembler.general.IncludePaths>
+  <armgcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAM3U_DFP\1.0.49\include</Value>
+    </ListValues>
+  </armgcc.preprocessingassembler.general.IncludePaths>
+</ArmGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+      <Value>EIE_ASCII</Value>
+      <Value>__SAM3U2C__</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../bsp</Value>
+      <Value>../../../drivers</Value>
+      <Value>../../../../firmware_common/drivers</Value>
+      <Value>../../../../firmware_common/bsp</Value>
+      <Value>../../../../firmware_common/application</Value>
+      <Value>../../../../firmware_common/cmsis</Value>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAM3U_DFP\1.0.49\include</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize debugging experience (-Og)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -Wno-unused-function</armgcc.compiler.miscellaneous.OtherFlags>
+  <armgcc.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcc.linker.general.AdditionalSpecs>
+  <armgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcc.linker.libraries.Libraries>
+  <armgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>%24(ProjectDir)\Device_Startup</Value>
+    </ListValues>
+  </armgcc.linker.libraries.LibrarySearchPaths>
+  <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
+  <armgcc.linker.miscellaneous.LinkerFlags>-Tsam3u2c_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAM3U_DFP\1.0.49\include</Value>
+    </ListValues>
+  </armgcc.assembler.general.IncludePaths>
+  <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
+  <armgcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAM3U_DFP\1.0.49\include</Value>
+    </ListValues>
+  </armgcc.preprocessingassembler.general.IncludePaths>
+  <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
+</ArmGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\firmware_common\application\debug.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\application\debug.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\application\main.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\application\main.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\application\user_app1.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\application\user_app1.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\application\user_app2.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\application\user_app2.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\application\user_app3.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\application\user_app3.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\interrupts.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\interrupts.c</Link>
+    </Compile>
+    <None Include="..\..\..\firmware_common\cmsis\core_cm3.h">
+      <SubType>compile</SubType>
+      <Link>firmware_common\cmsis\core_cm3.h</Link>
+    </None>
+    <Compile Include="..\..\..\firmware_common\drivers\adc12.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\adc12.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\ant.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\ant.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\ant_api.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\ant_api.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\buttons.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\buttons.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\exceptions.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\exceptions.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\leds.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\leds.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\messaging.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\messaging.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\sam3u_i2c.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\sam3u_i2c.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\sam3u_spi.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\sam3u_spi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\sam3u_ssp.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\sam3u_ssp.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\sam3u_uart.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\sam3u_uart.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\timer.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\timer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\firmware_common\drivers\utilities.c">
+      <SubType>compile</SubType>
+      <Link>firmware_common\drivers\utilities.c</Link>
+    </Compile>
+    <Compile Include="..\..\bsp\eief1-pcb-01.c">
+      <SubType>compile</SubType>
+      <Link>firmware_ascii\bsp\eief1-pcb-01.c</Link>
+    </Compile>
+    <Compile Include="..\..\drivers\lcd_nhd-c0220biz.c">
+      <SubType>compile</SubType>
+      <Link>firmware_ascii\drivers\lcd_nhd-c0220biz.c</Link>
+    </Compile>
+    <Compile Include="Device_Startup\startup_sam3u.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Device_Startup\system_sam3u.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Device_Startup\" />
+    <Folder Include="firmware_ascii" />
+    <Folder Include="firmware_ascii\bsp" />
+    <Folder Include="firmware_ascii\drivers" />
+    <Folder Include="firmware_common\" />
+    <Folder Include="firmware_common\application" />
+    <Folder Include="firmware_common\drivers" />
+    <Folder Include="firmware_common\cmsis" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Device_Startup\sam3u2c_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\sam3u2c_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\sam3u_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\sam3u_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

@@ -48,7 +48,11 @@
 typedef void( *IntFunc )( void );
 
 /// Weak attribute
-    #define WEAK __weak
+#ifdef __GNUC__
+    #define WEAK __attribute__((weak))
+#else
+	#define WEAK __weak
+#endif
 
 //------------------------------------------------------------------------------
 //         Global functions

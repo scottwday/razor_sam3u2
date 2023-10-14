@@ -135,6 +135,10 @@ void ClockSetup(void)
   AT91C_BASE_PMC->PMC_SCER = AT91C_PMC_PCK0;
 
   /* Turn on the main oscillator and wait for it to start up */
+  for (volatile u32 i = 0; i<100000; i++)
+  {
+	  ;
+  }
   AT91C_BASE_PMC->PMC_MOR = PMC_MOR_INIT;
   while ( !(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_MOSCXTS) );
 

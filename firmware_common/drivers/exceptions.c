@@ -40,6 +40,9 @@ their place when the code is built.
 ** and exception table.
 */
 
+/* GCC defines the handlers in startup_xxx.c */
+#ifndef __GNUC__
+
 //------------------------------------------------------------------------------
 //         Headers
 //------------------------------------------------------------------------------
@@ -388,3 +391,5 @@ WEAK void UDPD_IrqHandler(void)
 {
     while(1);
 }
+
+#endif
